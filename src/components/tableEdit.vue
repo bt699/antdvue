@@ -1,5 +1,12 @@
 <template>
   <a-table :columns="columns" :data-source="data" bordered>
+	<template slot="homeToken" slot-scope="text,record,index">
+		<a-switch :defaultChecked="text"></a-switch>
+		{{text}}-{{record}}-{{index}}
+	</template>
+	<template slot="homeRoles" slot-scope="text,record,index">
+		{{text}}-{{record}}-{{index}}
+	</template>
     <template
       v-for="col in ['name', 'age', 'address']"
       :slot="col"
@@ -38,7 +45,7 @@ const columns = [
   {
     title: 'name',
     dataIndex: 'name',
-    width: '25%',
+    width: '15%',
     scopedSlots: { customRender: 'name' },
   },
   {
@@ -50,8 +57,21 @@ const columns = [
   {
     title: 'address',
     dataIndex: 'address',
-    width: '40%',
+    width: '10%',
     scopedSlots: { customRender: 'address' },
+  },
+  {
+	  title:'homeToken',
+	  dataIndex:'homeToken',
+	  width:'10%',
+	  scopedSlots:{customRender:'homeToken'}
+	  
+  },
+  {
+	  title:'homeRoles',
+	  dataIndex:'homeRoles',
+	  width:'20%',
+	  scopedSlots:{customRender:'homeRoles'}
   },
   {
     title: 'operation',
@@ -67,6 +87,13 @@ for (let i = 0; i < 100; i++) {
     name: `Edrward ${i}`,
     age: 32,
     address: `London Park no. ${i}`,
+	homeToken:true,
+	homeRoles:[
+		"create-realm",
+		"offline_access",
+		"uma_authorization",
+		"admin"
+	]
   });
 }
 export default {

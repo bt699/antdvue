@@ -3,6 +3,10 @@
 ## Project setup
 ```
 npm install
+npm i --save ant-design-vue
+npm update
+添加.gitignore
+安装tortoisegit
 ```
 
 ### Compiles and hot-reloads for development

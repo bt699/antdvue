@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		算法
+		原
+		["create-realm","offline_access","uma_authorization","admin"]
+		转后
+		[{create-realm: false},{offline_access: false},{uma_authorization: false},{admin: false}]
+		<script>
+		const tagRoles=[
+				"create-realm",
+				"offline_access",
+				"uma_authorization",
+				"admin"
+			]
+			
+			console.log(tagRoles);
+			const obj = Object.assign({},...tagRoles)
+			console.log(obj);
+			const obj1 = Object.create(tagRoles,false)
+			console.log(obj1);
+			const arr = Array.of(tagRoles)
+			console.log(arr);
+			const arr2 = tagRoles.slice().fill(false)			
+			console.log(arr2);
+			console.log(tagRoles);
+			// const obj2 = Object.create(tagRoles,arr2)
+			// console.log(obj2);
+			// Array.entries(tagRoles,arr2)
+			const arr4 = []
+			tagRoles.forEach((item,index)=>{				
+				 const obj = {}
+				 obj[item]=false
+				 arr4.push(obj)
+				
+			})
+			console.log(arr4);
+			console.log(tagRoles);
+		</script>
+	</body>
+</html>

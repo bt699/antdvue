@@ -2,21 +2,31 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-	<tableEdit></tableEdit>
+	<!-- <colorPicker v-molde='color' @change="headleChangeColor" >更多颜色</colorPicker> -->
+	<!-- <tableEdit></tableEdit> -->
+	<colorEdit ></colorEdit><p>更多</p>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import tableEdit from './components/tableEdit.vue'
+import colorEdit from './components/colorEdit.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-	tableEdit
+	tableEdit,
+	colorEdit
 	
-  }
+	
+  },
+  data() {
+  	return {
+  		color: '#ff0000'
+  	}
+  },
 }
 </script>
 

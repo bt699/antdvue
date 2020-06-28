@@ -130,10 +130,12 @@ export default {
 	  	"uma_authorization",
 	  	"admin"
 	  ],
-	  tagtrue:{"create-realm":false,
+	  tagtrue:{ 
+		  "create-realm":false,
 	  	"offline_access":true,
 	  	"uma_authorization":false,
-	  	"admin":true},
+	  	"admin":true 
+		},
 		tagtf:[],
 		shuju:[],
 		

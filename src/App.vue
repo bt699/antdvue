@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 	<!-- <colorPicker v-molde='color' @change="headleChangeColor" >更多颜色</colorPicker> -->
-	<!-- <tableEdit></tableEdit> -->
+	<tableEdit></tableEdit>
 	<colorEdit ></colorEdit><p>更多</p>
   </div>
 </template>

@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+	<ConfigProvider :style="{fontSize:fontSize+'px'+' !important',fontSizeBase:fontSize+'px'}">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 	<!-- <colorPicker v-molde='color' @change="headleChangeColor" >更多颜色</colorPicker> -->
-	<tableEdit></tableEdit>
+	<tableEdit ></tableEdit>
 	<colorEdit ></colorEdit><p>更多</p>
+	</ConfigProvider>
   </div>
 </template>
 
@@ -24,7 +26,8 @@ export default {
   },
   data() {
   	return {
-  		color: '#ff0000'
+  		color: '#ff0000',
+		fontSize:25
   	}
   },
 }

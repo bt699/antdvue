@@ -1,5 +1,5 @@
 <template>
-  <a-table :columns="columns" :data-source="data" bordered>
+  <a-table :columns="columns" :data-source="data" bordered size="middle" :rowClassName="className">
 	<template slot="homeToken" slot-scope="text,record,index">
 		<a-switch :defaultChecked="text" @change="tokenChange" @click="tokenClick(text,record,index)"></a-switch>
 		{{text}}-{{record}}-{{index}}
@@ -60,36 +60,42 @@ const columns = [
     dataIndex: 'name',
     width: '15%',
     scopedSlots: { customRender: 'name' },
+	rowClassName:'25px'
   },
   {
     title: 'age',
     dataIndex: 'age',
     width: '15%',
     scopedSlots: { customRender: 'age' },
+	rowClassName:'25px'
   },
   {
     title: 'address',
     dataIndex: 'address',
     width: '10%',
     scopedSlots: { customRender: 'address' },
+	rowClassName:'25px'
   },
   {
 	  title:'homeToken',
 	  dataIndex:'homeToken',
 	  width:'10%',
-	  scopedSlots:{customRender:'homeToken'}
+	  scopedSlots:{customRender:'homeToken'},
+	  rowClassName:'25px'
 	  
   },
   {
 	  title:'homeRoles',
 	  dataIndex:'homeRoles',
 	  width:'20%',
-	  scopedSlots:{customRender:'homeRoles'}
+	  scopedSlots:{customRender:'homeRoles'},
+	  rowClassName:'25px'
   },
   {
     title: 'operation',
     dataIndex: 'operation',
     scopedSlots: { customRender: 'operation' },
+	rowClassName:'25px'
   },
 ];
 
@@ -153,6 +159,10 @@ export default {
   },
 	  
   methods: {
+	  className(record, index){
+		  record.csbsType ==='不限范围'?'csbsTypes':''
+		  
+	  },
 	  tokenClick(checked,e,text){
 		  console.log(checked);
 		  console.log(e);
@@ -307,6 +317,7 @@ export default {
 	//switch end
   },
   mounted() {
+	  
   	
   }
 };
@@ -316,4 +327,10 @@ export default {
 .editable-row-operations a {
   margin-right: 8px;
 }
+::v-deep .ant-table{
+	font-size: 25px;
+}
+/* /deep/ .ant-table {
+     font-size: 25px;
+    } */
 </style>

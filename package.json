@@ -9,6 +9,7 @@
   "dependencies": {
     "ant-design-vue": "^1.6.2",
     "core-js": "^2.6.11",
+    "vcolorpicker": "^1.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {

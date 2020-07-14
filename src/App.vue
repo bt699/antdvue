@@ -7,6 +7,36 @@
 	<tableEdit ></tableEdit>
 	<colorEdit ></colorEdit><p>更多</p>
 	</ConfigProvider>
+	 <a-menu style="font-size: 25px;" v-model="current" mode="horizontal">
+	      <a-menu-item key="mail"> <a-icon type="mail" />Navigation One </a-menu-item>
+	      <a-menu-item key="app" disabled> <a-icon type="appstore" />Navigation Two </a-menu-item>
+	      <a-sub-menu>
+	        <span slot="title" class="submenu-title-wrapper"
+	          ><a-icon type="setting" />Navigation Three - Submenu</span
+	        >
+	        <a-menu-item-group title="Item 1">
+	          <a-menu-item  key="setting:1">
+	            Option 1
+	          </a-menu-item>
+	          <a-menu-item key="setting:2">
+	            Option 2
+	          </a-menu-item>
+	        </a-menu-item-group>
+	        <a-menu-item-group title="Item 2">
+	          <a-menu-item key="setting:3">
+	            Option 3
+	          </a-menu-item>
+	          <a-menu-item key="setting:4">
+	            Option 4
+	          </a-menu-item>
+	        </a-menu-item-group>
+	      </a-sub-menu>
+	      <a-menu-item key="alipay">
+	        <a href="https://antdv.com" target="_blank" rel="noopener noreferrer"
+	          >Navigation Four - Link</a
+	        >
+	      </a-menu-item>
+	    </a-menu>
   </div>
 </template>
 
@@ -27,7 +57,8 @@ export default {
   data() {
   	return {
   		color: '#ff0000',
-		fontSize:25
+		fontSize:25,
+		current: ['mail'],
   	}
   },
 }
@@ -41,5 +72,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+::v-deep .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title{
+	font-size: 24px;
 }
 </style>

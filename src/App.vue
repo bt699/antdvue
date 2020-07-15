@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+	<button @click="fontfam('mnjcd')">ziti</button>
 	<ConfigProvider :style="{fontSize:fontSize+'px'+' !important',fontSizeBase:fontSize+'px'}">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -61,12 +62,22 @@ export default {
 		current: ['mail'],
   	}
   },
+  methods:{
+	  fontfam(t){
+		  less.modifyVars({
+			  "@fontfam":t
+		  })
+		  document.getElementById('app').style.fontFamily = t
+	  }
+  }
 }
 </script>
 
-<style>
+<style lang="less">
+@fontfam:'';
+@import '../public/font/font.less';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: @fontfam;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

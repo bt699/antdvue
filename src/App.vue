@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-	<ConfigProvider :style="{fontSize:fontSize+'px'+' !important',fontSizeBase:fontSize+'px'}">
+	  <a-button @click="fontfam('迷你简彩蝶')">Default</a-button>
+	  <a-button @click="fontsiz('12px')">Default</a-button>
+	<ConfigProvider :style="{fontSize:fontSize+'px'+' !important',fontSizeBase:fontSize+'px',fontFamily:fontfamily}">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 	<!-- <colorPicker v-molde='color' @change="headleChangeColor" >更多颜色</colorPicker> -->
@@ -59,24 +61,45 @@ export default {
   		color: '#ff0000',
 		fontSize:25,
 		current: ['mail'],
+		fontfamily:'',
   	}
+  },
+  methods: {
+  	fontfam(t) {
+  		console.log(t);
+  		less.modifyVars({
+  			"@fontfamily":t
+  		})
+		document.getElementById('app').style.fontFamily = t
+  	},
+	fontsiz(t) {
+		console.log(t);
+		less.modifyVars({
+			"@fontSize":t
+		})
+		document.getElementById('app').style.fontSize = t
+	}
+	
   },
 }
 </script>
 
 
 <style lang="less">
-@fontfam:'迷你简彩蝶';
-@import "./common/font/font.less";
+@fontfamily:'';
+@fontFace:"";
+@fontSize:'';
+@import "../public/font/font.less";
+//<link rel="stylesheet/less" type="text/css" href="文件路径/styles.less">
 #app {
   //font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  font-family: @fontfam;
+  font-family: @fontFace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  font-size: 24px;
+  font-size: @fontSize;
 }
 ::v-deep .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title{
 	font-size: 24px;

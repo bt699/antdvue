@@ -25,7 +25,10 @@ module.exports = {
 		less:{
 			lessOptions:{
 				javascriptEnabled: true
-			}
+			},
+			globalVars: { 
+				fontfamilym:"迷你简彩蝶" ,
+			} 
 			
 		        // http://lesscss.org/usage/#less-options-strict-units `Global Variables`
 		        // `primary` is global variables fields name

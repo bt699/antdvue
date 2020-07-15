@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-		<a-button>Default</a-button>
+		<a-button @click="fontfam('sans-serif')">Default</a-button>
 		
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -36,7 +36,15 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  methods: {
+  	fontfam(t) {
+  		console.log(t);
+		less.modifyVars({
+			"@fontfam":t
+		})
+  	}
+  },
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+	  <upFont></upFont>
 	<button @click="fontfam('mnjcd')">ziti</button>
 	<ConfigProvider :style="{fontSize:fontSize+'px'+' !important',fontSizeBase:fontSize+'px'}">
     <img alt="Vue logo" src="./assets/logo.png">
@@ -38,6 +39,7 @@
 	        >
 	      </a-menu-item>
 	    </a-menu>
+		
   </div>
 </template>
 
@@ -45,13 +47,16 @@
 import HelloWorld from './components/HelloWorld.vue'
 import tableEdit from './components/tableEdit.vue'
 import colorEdit from './components/colorEdit.vue'
+import upFont from './components/upfont.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
 	tableEdit,
-	colorEdit
+	colorEdit,
+	upFont
+	
 	
 	
   },
